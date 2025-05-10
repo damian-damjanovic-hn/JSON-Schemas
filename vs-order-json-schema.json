@@ -1,0 +1,176 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string"
+        },
+        "retailer": {
+            "type": "string"
+        },
+        "order_reference": {
+            "type": "string"
+        },
+        "order_date": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "status": {
+            "type": "string"
+        },
+        "channel": {
+        },
+        "purchase_order_reference": {
+        },
+        "end_user_purchase_order_reference": {
+            "type": "string"
+        },
+        "additional_order_reference": {
+            "type": "string"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "test_flag": {
+            "type": "boolean"
+        },
+        "supplier": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Item"
+            }
+        },
+        "currency_code": {
+            "type": "string"
+        },
+        "subtotal": {
+            "type": "string"
+        },
+        "tax": {
+            "type": "string"
+        },
+        "total": {
+            "type": "string"
+        },
+        "shipping_address": {
+            "$ref": "#/definitions/Shipping_address"
+        },
+        "retailer_data": {
+            "$ref": "#/definitions/Retailer_data"
+        },
+        "delivery_service_code": {
+        }
+    },
+    "definitions": {
+        "Item": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "part_number": {
+                    "type": "string"
+                },
+                "retailer_sku_reference": {
+                    "type": "string"
+                },
+                "supplier_sku_reference": {
+                    "type": "string"
+                },
+                "line_reference": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "unit_cost_price": {
+                    "type": "string"
+                },
+                "subtotal": {
+                    "type": "string"
+                },
+                "tax": {
+                    "type": "string"
+                },
+                "tax_rate": {
+                    "type": "string"
+                },
+                "total": {
+                    "type": "string"
+                },
+                "promised_date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "retailer_additional_reference": {
+                }
+            }
+        },
+        "Shipping_address": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string"
+                },
+                "line_1": {
+                    "type": "string"
+                },
+                "line_2": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "postal_code": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "email": {
+                }
+            }
+        },
+        "Retailer_data": {
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "tax_code": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/Shipping_address"
+                }
+            }
+        }
+    }
+}
