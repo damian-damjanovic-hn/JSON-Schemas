@@ -1,0 +1,65 @@
+{
+    "url": "https://www.the-edge.io/restapi/v4/orders/51973954/",
+    "retailer": "https://www.the-edge.io/restapi/v4/customers/245/",
+    "order_reference": "31002000000_185_332775",
+    "order_date": "2025-05-10T09:56:44",
+    "status": "ORDER",
+    "channel": null,
+    "purchase_order_reference": null,
+    "end_user_purchase_order_reference": "31002000000",
+    "additional_order_reference": "31002000000",
+    "comment": "leave parcel behind the gate",
+    "test_flag": false,
+    "supplier": "https://www.the-edge.io/restapi/v4/suppliers/1234/",
+    "items": [
+        {
+            "url": "https://www.the-edge.io/restapi/v4/items/81277773/",
+            "part_number": "SKU123",
+            "retailer_sku_reference": "SKU123",
+            "supplier_sku_reference": "SKU123",
+            "line_reference": "11837034",
+            "quantity": 1,
+            "name": "Bluetooth Portable Turntable - Red",
+            "description": "",
+            "status": "ORDER",
+            "unit_cost_price": "129.24",
+            "subtotal": "129.24",
+            "tax": "12.92",
+            "tax_rate": "10.00",
+            "total": "142.16",
+            "promised_date": "2025-05-22T09:58:16",
+            "retailer_additional_reference": null
+        }
+    ],
+    "currency_code": "AUD",
+    "subtotal": "129.24",
+    "tax": "12.92",
+    "total": "142.16",
+    "shipping_address": {
+        "country": "AU",
+        "line_1": "60 Kingsborough Pass",
+        "line_2": null,
+        "city": "Trinity Park",
+        "postal_code": "4879",
+        "state": "Queensland",
+        "phone": "0400000000",
+        "full_name": "John Doe",
+        "email": null
+    },
+    "retailer_data": {
+        "uuid": "79aadaec-73e1-48eb-8344-10dd07b6495c",
+        "name": "Harvey Norman",
+        "email": "",
+        "phone": "",
+        "tax_code": "",
+        "address": {
+            "line_1": "",
+            "line_2": "",
+            "city": "",
+            "state": "",
+            "country": "AU",
+            "postal_code": ""
+        }
+    },
+    "delivery_service_code": null
+}
