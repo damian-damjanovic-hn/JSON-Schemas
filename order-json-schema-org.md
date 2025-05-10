@@ -60,108 +60,108 @@ Instances of [Order](https://schema.org/Order "Order") may appear as a value for
 No Markup Microdata RDFa JSON-LD Structure
 
 Example encoded as [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) in a HTML script tag.
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Invoice",
-        "broker": {
-          "@type": "LocalBusiness",
-          "name": "ACME Home Heating"
-        },
-        "accountId": "xxxx-xxxx-xxxx-1234",
-        "customer": {
-          "@type": "Person",
-          "name": "Jane Doe"
-        },
-        "paymentDueDate": "2015-01-30",
-        "minimumPaymentDue": {
-          "@type": "PriceSpecification",
-          "price": 0.00,
-          "priceCurrency": "USD"
-        },
-        "totalPaymentDue": {
-          "@type": "PriceSpecification",
-          "price": 0.00,
-          "priceCurrency": "USD"
-        },
-        "paymentStatus": "https://schema.org/PaymentComplete",
-        "referencesOrder": [
-          {
-            "@type": "Order",
-            "description": "furnace",
-            "orderDate": "2014-12-01",
-            "orderNumber": "123ABC",
-            "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
-            "orderedItem": {
-              "@type": "Product",
-              "name": "ACME Furnace 3000",
-              "productID": "ABC123"
-            }
-          },
-          {
-            "@type": "Order",
-            "description": "furnace installation",
-            "orderDate": "2014-12-02",
-            "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
-            "orderedItem": {
-              "@type": "Service",
-              "description": "furnace installation"
-            }
-          }
-        ]
-    }
-    </script>
-
+```html
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Invoice",
+    "broker": {
+      "@type": "LocalBusiness",
+      "name": "ACME Home Heating"
+    },
+    "accountId": "xxxx-xxxx-xxxx-1234",
+    "customer": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "paymentDueDate": "2015-01-30",
+    "minimumPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "totalPaymentDue": {
+      "@type": "PriceSpecification",
+      "price": 0.00,
+      "priceCurrency": "USD"
+    },
+    "paymentStatus": "https://schema.org/PaymentComplete",
+    "referencesOrder": [
+      {
+        "@type": "Order",
+        "description": "furnace",
+        "orderDate": "2014-12-01",
+        "orderNumber": "123ABC",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Product",
+          "name": "ACME Furnace 3000",
+          "productID": "ABC123"
+        }
+      },
+      {
+        "@type": "Order",
+        "description": "furnace installation",
+        "orderDate": "2014-12-02",
+        "paymentMethod": "http://purl.org/goodrelations/v1#ByInvoice",
+        "orderedItem": {
+          "@type": "Service",
+          "description": "furnace installation"
+        }
+      }
+    ]
+}
+</script>
+```
 [Example 2](https://schema.org/Order#eg-0376 "Link: #eg-0376")
 
 No Markup Microdata RDFa JSON-LD Structure
 
 Example encoded as [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) in a HTML script tag.
-
-    <script type="application/ld+json">
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Order",
+  "seller": {
+    "@type": "Organization",
+    "name": "ACME Supplies"
+  },
+  "customer": {
+    "@type": "Person",
+    "name": "Jane Doe"
+  },
+  "orderedItem": [
     {
-      "@context": "https://schema.org/",
-      "@type": "Order",
-      "seller": {
-        "@type": "Organization",
-        "name": "ACME Supplies"
+      "@type": "OrderItem",
+      "orderItemNumber": "abc123",
+      "orderQuantity": 1,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget"
       },
-      "customer": {
-        "@type": "Person",
-        "name": "Jane Doe"
+      "orderItemStatus": "https://schema.org/OrderDelivered",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-10"
+      }
+    },
+    {
+      "@type": "OrderItem",
+      "orderItemNumber": "def456",
+      "orderQuantity": 3,
+      "orderedItem": {
+        "@type": "Product",
+        "name": "Widget accessories"
       },
-      "orderedItem": [
-        {
-          "@type": "OrderItem",
-          "orderItemNumber": "abc123",
-          "orderQuantity": 1,
-          "orderedItem": {
-            "@type": "Product",
-            "name": "Widget"
-          },
-          "orderItemStatus": "https://schema.org/OrderDelivered",
-          "orderDelivery": {
-            "@type": "ParcelDelivery",
-            "expectedArrivalFrom": "2015-03-10"
-          }
-        },
-        {
-          "@type": "OrderItem",
-          "orderItemNumber": "def456",
-          "orderQuantity": 3,
-          "orderedItem": {
-            "@type": "Product",
-            "name": "Widget accessories"
-          },
-          "orderItemStatus": "https://schema.org/OrderInTransit",
-          "orderDelivery": {
-            "@type": "ParcelDelivery",
-            "expectedArrivalFrom": "2015-03-15",
-            "expectedArrivalUntil": "2015-03-18"
-          }
-        }
-      ]
+      "orderItemStatus": "https://schema.org/OrderInTransit",
+      "orderDelivery": {
+        "@type": "ParcelDelivery",
+        "expectedArrivalFrom": "2015-03-15",
+        "expectedArrivalUntil": "2015-03-18"
+      }
     }
-    </script>
-
+  ]
+}
+</script>
+```
