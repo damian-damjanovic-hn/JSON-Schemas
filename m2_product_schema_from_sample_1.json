@@ -1,6 +1,24 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
+    "required": [
+        "attribute_set_id",
+        "created_at",
+        "custom_attributes",
+        "extension_attributes",
+        "id",
+        "media_gallery_entries",
+        "name",
+        "options",
+        "price",
+        "product_links",
+        "sku",
+        "status",
+        "tier_prices",
+        "type_id",
+        "updated_at",
+        "visibility"
+    ],
     "properties": {
         "id": {
             "type": "integer"
@@ -27,67 +45,60 @@
             "type": "string"
         },
         "created_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         },
         "updated_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         },
         "extension_attributes": {
-            "$ref": "#/definitions/Extension_attributes"
-        },
-        "product_links": {
-            "type": "array",
-            "items": {
-            }
-        },
-        "options": {
-            "type": "array",
-            "items": {
-            }
-        },
-        "media_gallery_entries": {
-            "type": "array",
-            "items": {
-            }
-        },
-        "tier_prices": {
-            "type": "array",
-            "items": {
-            }
-        },
-        "custom_attributes": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/Custom_attribute"
-            }
-        }
-    },
-    "definitions": {
-        "Extension_attributes": {
             "type": "object",
+            "required": [
+                "website_ids"
+            ],
             "properties": {
                 "website_ids": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/Website_id"
+                        "type": "integer"
                     }
                 }
             }
         },
-        "Website_id": {
-            "type": "integer"
+        "product_links": {
+            "type": "array"
         },
-        "Custom_attribute": {
-            "type": "object",
-            "properties": {
-                "attribute_code": {
-                    "type": "string"
+        "options": {
+            "type": "array"
+        },
+        "media_gallery_entries": {
+            "type": "array"
+        },
+        "tier_prices": {
+            "type": "array"
+        },
+        "custom_attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "attribute_code": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "array"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
                 },
-                "value": {
-                    "type": "string"
-                }
+                "required": [
+                    "attribute_code",
+                    "value"
+                ]
             }
         }
     }
